@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Shape {
+public:
+    void info() {
+        cout << "This is a shape\n";
+    }
+};
+
+class Circle : public Shape {
+public:
+    void drawCircle() {
+        cout << "Drawing Circle\n";
+    }
+};
+
+class Square : public Shape {
+public:
+    void drawSquare() {
+        cout << "Drawing Square\n";
+    }
+};
+
+int main() {
+    Circle c;
+    Square s;
+
+    c.info();
+    c.drawCircle();
+
+    s.info();
+    s.drawSquare();
+
+    return 0;
+}
