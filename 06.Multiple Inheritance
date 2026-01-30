@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Camera {
+public:
+    void capture() {
+        cout << "Photo captured\n";
+    }
+};
+
+class GPS {
+public:
+    void navigate() {
+        cout << "Navigation started\n";
+    }
+};
+
+class Smartphone : public Camera, public GPS {
+public:
+    void call() {
+        cout << "Calling...\n";
+    }
+};
+
+int main() {
+    Smartphone s;
+    s.capture();
+    s.navigate();
+    s.call();
+
+    return 0;
+}
