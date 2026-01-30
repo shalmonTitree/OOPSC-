@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Vehicle {
+public:
+    void start() {
+        cout << "Vehicle starts\n";
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void fuel() {
+        cout << "Car uses petrol\n";
+    }
+};
+
+class SportsCar : public Car {
+public:
+    void speed() {
+        cout << "SportsCar is fast\n";
+    }
+};
+
+int main() {
+    SportsCar sc;
+    sc.start();   // Vehicle
+    sc.fuel();    // Car
+    sc.speed();   // SportsCar
+
+    return 0;
+}
