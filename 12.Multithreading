@@ -1,0 +1,36 @@
+#include <iostream>
+#include <thread>
+using namespace std;
+
+void task1() {
+    cout << "Task 1 is running" << endl;
+}
+
+void task2() {
+    cout << "Task 2 is running" << endl;
+}
+
+int main() {
+    thread t1(task1);   // create first thread
+    thread t2(task2);   // create second thread
+
+    t1.join();          // wait for t1 to finish
+    t2.join();          // wait for t2 to finish
+
+    cout << "Main thread finished" << endl;
+    return 0;
+}
+
+
+What this code does (simple explanation)
+task1 and task2 are two independent tasks
+std::thread creates separate threads for them
+Both tasks run concurrently
+join() makes the main thread wait until child threads finish
+
+(Order can change because threads run in parallel.)
+
+std::thread comes from <thread>
+join() is mandatory, otherwise program may crash
+Output order is not guaranteed
+Threads run in parallel
