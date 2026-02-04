@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+// Abstract class
+class Shape {
+public:
+    // Pure virtual function
+    virtual int area() = 0;
+
+    // Normal function
+    void show() {
+        cout << "This is a shape" << endl;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape {
+    int length, breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    // Implementing pure virtual function
+    int area() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    Shape* s = new Rectangle(4, 5);
+    cout << "Area: " << s->area() << endl;
+    s->show();
+    return 0;
+}
