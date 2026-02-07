@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class B {
+public:
+    B() {
+        cout << "Base class constructor called" << endl;
+    }
+};
+
+class D : public B {
+public:
+    D() {
+        cout << "Derived class constructor called" << endl;
+    }
+};
+
+int main() {
+    D obj;
+    return 0;
+}
