@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Sample {
+    int x;
+
+public:
+    Sample(int val) {
+        x = val;
+    }
+
+    Sample(const Sample& obj) {
+        x = obj.x;
+        cout << "Copy constructor called" << endl;
+    }
+
+    void show() {
+        cout << x << endl;
+    }
+};
+
+int main() {
+    Sample s1(10);
+    Sample s2 = s1;  // Copy constructor
+    s2.show();
+    return 0;
+}
