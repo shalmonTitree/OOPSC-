@@ -1,32 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Camera {
+class Animal {
 public:
-    void capture() {
-        cout << "Photo captured\n";
+    void eat() {
+        cout << "Eating..." << endl;
     }
 };
 
-class GPS {
+class Dog : public Animal {
 public:
-    void navigate() {
-        cout << "Navigation started\n";
+    void bark() {
+        cout << "Dog barking" << endl;
     }
 };
 
-class Smartphone : public Camera, public GPS {
+class Cat : public Animal {
 public:
-    void call() {
-        cout << "Calling...\n";
+    void meow() {
+        cout << "Cat meowing" << endl;
     }
 };
 
 int main() {
-    Smartphone s;
-    s.capture();
-    s.navigate();
-    s.call();
+    Dog d;
+    Cat c;
+
+    d.eat();
+    d.bark();
+
+    c.eat();
+    c.meow();
 
     return 0;
 }
