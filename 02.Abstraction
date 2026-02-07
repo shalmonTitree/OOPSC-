@@ -1,55 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Abstract class
 class Vehicle {
 public:
-    // Pure virtual functions
-    virtual void start() = 0; // 0 means no implementation here
-    virtual void stop() = 0;
-
-    // Virtual destructor (good practice)
+    virtual void start() = 0;  // abstraction
     virtual ~Vehicle() {}
 };
 
-// Derived class
 class Car : public Vehicle {
 public:
     void start() override {
-        cout << "Car starts with a key\n";
-    }
-
-    void stop() override {
-        cout << "Car stops using brakes\n";
-    }
-};
-
-// Derived class
-class Bike : public Vehicle {
-public:
-    void start() override {
-        cout << "Bike starts with a kick or button\n";
-    }
-
-    void stop() override {
-        cout << "Bike stops using hand brakes\n";
+        cout << "Car starts with key or button" << endl;
     }
 };
 
 int main() {
-    Vehicle* v1 = new Car();
-    Vehicle* v2 = new Bike();
-
-    v1->start();
-    v1->stop();
-
-    v2->start();
-    v2->stop();
-//  ✔ Calls resolved at runtime
-//  ✔ Correct function called based on object type
-//  ✔ This is dynamic binding
-    delete v1;
-    delete v2;
-
+    Vehicle* v = new Car();  // user knows "start", not how
+    v->start();
+    delete v;
     return 0;
 }
