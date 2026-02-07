@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Box {
+private:
+    int width;
+
+public:
+    Box(int w) : width(w) {}
+
+    // Friend function declaration
+    friend void printWidth(Box b);
+};
+
+// Friend function definition
+void printWidth(Box b) {
+    cout << "Width: " << b.width << endl;
+}
+
+int main() {
+    Box b(10);
+    printWidth(b);
+    return 0;
+}
