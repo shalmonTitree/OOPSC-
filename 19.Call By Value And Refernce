@@ -1,0 +1,31 @@
+//Call By value
+#include <bits/stdc++.h>
+using namespace std;
+
+void increment(int x) {   // copy received
+    x = x + 1;
+}
+
+int main() {
+    int a = 10;
+    increment(a);
+    cout << "Value of a: " << a << endl;
+    return 0;
+}
+
+
+
+//Call By Reference
+#include <bits/stdc++.h>
+using namespace std;
+
+void increment(int& x) {  // reference
+    x = x + 1;
+}
+
+int main() {
+    int a = 10;
+    increment(a);
+    cout << "Value of a: " << a << endl;
+    return 0;
+}
