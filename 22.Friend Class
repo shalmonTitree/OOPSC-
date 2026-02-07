@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Engine;   // forward declaration
+
+class Car {
+private:
+    int speed;
+
+public:
+    Car(int s) : speed(s) {}
+
+    friend class Engine;  // Engine is friend
+};
+
+class Engine {
+public:
+    void showSpeed(Car c) {
+        cout << "Car speed: " << c.speed << endl;
+    }
+};
+
+int main() {
+    Car c(120);
+    Engine e;
+    e.showSpeed(c);
+    return 0;
+}
