@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Counter {
+private:
+    static int cnt;
+
+public:
+    static void increment() {
+        cnt++;
+    }
+
+    static void show() {
+        cout << "Count: " << cnt << endl;
+    }
+};
+
+int Counter::cnt = 0;
+
+int main() {
+    Counter::increment();
+    Counter::increment();
+    Counter::show();
+    return 0;
+}
