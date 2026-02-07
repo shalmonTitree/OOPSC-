@@ -1,36 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Shape {
+class Animal {
 public:
-    void info() {
-        cout << "This is a shape\n";
+    void eat() {
+        cout << "Eating..." << endl;
     }
 };
 
-class Circle : public Shape {
+class Dog : public Animal {
 public:
-    void drawCircle() {
-        cout << "Drawing Circle\n";
+    void bark() {
+        cout << "Dog barking" << endl;
     }
 };
 
-class Square : public Shape {
+class Cat : public Animal {
 public:
-    void drawSquare() {
-        cout << "Drawing Square\n";
+    void meow() {
+        cout << "Cat meowing" << endl;
     }
 };
 
 int main() {
-    Circle c;
-    Square s;
+    Dog d;
+    Cat c;
 
-    c.info();
-    c.drawCircle();
+    d.eat();
+    d.bark();
 
-    s.info();
-    s.drawSquare();
+    c.eat();
+    c.meow();
 
     return 0;
 }
