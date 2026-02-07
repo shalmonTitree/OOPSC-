@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student {
+    int id;
+
+public:
+    void setId(int id) {
+        this->id = id;   // distinguishes data member from parameter
+    }
+
+    void show() {
+        cout << "ID: " << id << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.setId(101);
+    s.show();
+    return 0;
+}
