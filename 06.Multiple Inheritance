@@ -1,36 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Animal {
+class A {
 public:
-    void eat() {
-        cout << "Eating..." << endl;
+    void showA() {
+        cout << "Class A" << endl;
     }
 };
 
-class Dog : public Animal {
+class B {
 public:
-    void bark() {
-        cout << "Dog barking" << endl;
+    void showB() {
+        cout << "Class B" << endl;
     }
 };
 
-class Cat : public Animal {
+class C : public A, public B {
 public:
-    void meow() {
-        cout << "Cat meowing" << endl;
+    void showC() {
+        cout << "Class C" << endl;
     }
 };
 
 int main() {
-    Dog d;
-    Cat c;
-
-    d.eat();
-    d.bark();
-
-    c.eat();
-    c.meow();
-
+    C obj;
+    obj.showA();
+    obj.showB();
+    obj.showC();
     return 0;
 }
