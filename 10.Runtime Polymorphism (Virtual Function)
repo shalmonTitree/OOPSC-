@@ -16,11 +16,9 @@ public:
 };
 
 int main() {
-    Base* b;
-    Derived d;
+    Base* b = new Derived();   // Base pointer to Derived object
+    b->show();                 // Calls Derived's show()
 
-    b = &d;
-    b->show();   // Calls Derived's show()
-
+    delete b;                  // Important to avoid memory leak
     return 0;
 }
