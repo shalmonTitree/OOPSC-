@@ -1,25 +1,24 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Point {
+class Number {
 public:
-    int x, y;
+    int value;
 
-    Point(int a, int b) {
-        x = a;
-        y = b;
+    Number(int v) {
+        value = v;
     }
 
-    Point operator + (const Point& p) {
-        return Point(x + p.x, y + p.y);
+    // Overload + operator
+    Number operator+(Number n) {
+        return Number(value + n.value);
     }
 };
 
 int main() {
-    Point p1(2, 3), p2(4, 5);
-    Point p3 = p1 + p2;
-
-    cout << p3.x << " " << p3.y << endl;
-
+    Number n1(10), n2(20);
+    Number n3 = n1 + n2;   // Calls overloaded +
+    
+    cout << n3.value;
     return 0;
 }
