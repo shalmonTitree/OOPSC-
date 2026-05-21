@@ -1,27 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Sample {
-    int x;
-
+class Student {
 public:
-    Sample(int val) {
-        x = val;
-    }
+    int age;
 
-    Sample(const Sample& obj) {
-        x = obj.x;
-        cout << "Copy constructor called" << endl;
-    }
-
-    void show() {
-        cout << "x = " << x << endl;
+    Student(int a) {
+        age = a;
     }
 };
 
 int main() {
-    Sample s1(10);
-    Sample s2 = s1;   // Copy constructor
-    s2.show();
+
+    Student s1(20);
+
+    Student s2 = s1;
+
+    cout << s2.age;
+
     return 0;
 }
