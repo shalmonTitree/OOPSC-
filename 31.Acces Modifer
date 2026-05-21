@@ -1,0 +1,78 @@
+1. Public : Members declared as public can be accessed from anywhere.
+Example:
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student {
+public:
+    string name;
+};
+
+int main() {
+    Student s1;
+
+    s1.name = "Rahul";
+
+    cout << s1.name;
+
+    return 0;
+}
+
+
+
+2. Private : Members declared as private can only be accessed inside the class.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student {
+private:
+    int marks;
+
+public:
+    void setMarks(int m) {
+        marks = m;
+    }
+
+    void showMarks() {
+        cout << marks;
+    }
+};
+
+int main() {
+
+    Student s1;
+
+    // s1.marks = 90; ❌ ERROR
+
+    s1.setMarks(90);
+    s1.showMarks();
+
+    return 0;
+}
+
+
+3. Protected : protected members cannot be accessed outside the class directly, but they can be accessed in derived (child) classes.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Parent {
+protected:
+    int x = 10;
+};
+
+class Child : public Parent {
+public:
+    void display() {
+        cout << x;
+    }
+};
+
+int main() {
+
+    Child c;
+    c.display();
+
+    return 0;
+}
