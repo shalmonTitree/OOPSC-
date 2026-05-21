@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Demo {
+class Student {
 public:
-    Demo() {
-        cout << "Constructor called" << endl;
-    }
+    string name;
 
-    ~Demo() {
-        cout << "Destructor called" << endl;
+    // Constructor
+    Student() {
+        name = "Rahul";
+        cout << "Constructor Called" << endl;
     }
 };
 
 int main() {
-    Demo obj;
+
+    Student s1;
+
+    cout << s1.name;
+
     return 0;
 }
