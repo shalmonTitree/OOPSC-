@@ -1,21 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Student {
-    int age;
+class Teacher
+{
+private:
+    double salary;
 
 public:
-    Student(int a) {
-        age = a;
+    // Constructor
+
+    Teacher(string n,string d,string s)
+    {
+        name = n;
+        dept = d;
+        subject = s;
     }
 
-    void show() {
-        cout << "Age: " << age << endl;
+    string name;
+    string dept;
+    string subject;
+
+    void changeDept(string newDept)
+    {
+        dept = newDept;
+    }
+
+    void setSalary(double s)
+    {
+        salary = s;
+    }
+    double getSalary()
+    {
+        return salary;
     }
 };
 
-int main() {
-    Student s(20);
-    s.show();
+int main()
+{
+    Teacher t1("Shalmon","IT","NLP");
+
+    cout << t1.name << endl;
+    cout << t1.dept << endl;
+    cout << t1.subject << endl;
+
     return 0;
 }
