@@ -19,6 +19,16 @@ public:
         subject = s;
     }
 
+    //copy construtor
+     Teacher(const Teacher &obj)
+    {
+        cout << "Custom Copy Constructor Called" << endl;
+
+        name = obj.name;
+        dept = obj.dept;
+        subject = obj.subject;
+        salary = obj.salary;
+    }
     void changeDept(string newDept)
     {
         dept = newDept;
