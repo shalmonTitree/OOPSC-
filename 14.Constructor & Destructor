@@ -1,22 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Student {
-public:
-    string name;
+class Teacher
+{
+private:
+    double salary;
 
+public:
     // Constructor
-    Student() {
-        name = "Rahul";
-        cout << "Constructor Called" << endl;
+
+    Teacher()
+    {
+        cout<<"Constructor created"<<endl;
+        dept = "CSE";
+    }
+
+    string name;
+    string dept;
+    string subject;
+
+    void changeDept(string newDept)
+    {
+        dept = newDept;
+    }
+
+    void setSalary(double s)
+    {
+        salary = s;
+    }
+    double getSalary()
+    {
+        return salary;
     }
 };
 
-int main() {
+int main()
+{
+    Teacher t1;
+    Teacher t2;
+    t1.name = "Shalmon Titre";
+    
+    t1.subject = "NLP";
 
-    Student s1;
-
-    cout << s1.name;
+    cout << t1.name << endl;
+    cout << t1.dept << endl;
+    cout << t1.subject << endl;
 
     return 0;
 }
