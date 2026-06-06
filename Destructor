@@ -36,3 +36,43 @@ int main() {
 
     return 0;
 }
+
+
+
+//use of destrucotr for dynamic allocaton
+#include <iostream>
+using namespace std;
+
+class Teacher {
+public:
+    string name;
+    int *salary;   // dynamically allocated memory
+
+    // Default constructor
+    Teacher() {
+        salary = new int;   // dynamic memory allocation
+        cout << "Teacher object created." << endl;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Salary: " << *salary << endl;
+    }
+
+    // Destructor
+    ~Teacher() {
+        delete salary;   // freeing memory
+        cout << "Memory released by destructor." << endl;
+    }
+};
+
+int main() {
+    Teacher t1;
+
+    t1.name = "Rahul";
+    *t1.salary = 50000;
+
+    t1.display();
+
+    return 0;
+}
