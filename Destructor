@@ -1,21 +1,38 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Student {
+class Teacher {
 public:
+    string name;
+    string subject;
+    int age;
 
-    Student() {
-        cout << "Constructor Called" << endl;
+
+    Teacher() {
+        cout << "Teacher object created." << endl;
     }
 
-    ~Student() {
-        cout << "Destructor Called" << endl;
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Subject: " << subject << endl;
+        cout << "Age: " << age << endl;
+    }
+
+    // Destructor
+    ~Teacher() {
+        cout << "Teacher object destroyed." << endl;
     }
 };
 
 int main() {
+    Teacher t1;
 
-    Student s1;
+    // Setting values in main
+    t1.name = "Rahul";
+    t1.subject = "Science";
+    t1.age = 40;
+
+    t1.display();
 
     return 0;
 }
