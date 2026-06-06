@@ -1,35 +1,40 @@
-//Single Inheritance
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-// Base class
-class Animal {
+// Parent class
+class Person {
 public:
-    void eat() {
-        cout << "Animal eats food\n";
+    string name;
+    int age;
+
+    void displayPerson() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
     }
 };
 
-// Derived class
-class Dog : public Animal {
+// Child class
+class Student : public Person {
 public:
-    void bark() {
-        cout << "Dog barks\n";
+    int rollNo;
+
+    void displayStudent() {
+        cout << "Roll Number: " << rollNo << endl;
     }
 };
 
 int main() {
-    Dog d;
-    d.eat();    // inherited
-    d.bark();   // own function
+    Student s1;
+
+    // Inherited attributes
+    s1.name = "Rahul";
+    s1.age = 20;
+
+    // Student attribute
+    s1.rollNo = 101;
+
+    s1.displayPerson();
+    s1.displayStudent();
 
     return 0;
 }
-
-
-
-
-
-
-
-
