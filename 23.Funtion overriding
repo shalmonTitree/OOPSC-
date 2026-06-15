@@ -1,27 +1,27 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Base {
+// Parent Class
+class Parent {
 public:
-    virtual void show() {
-        cout << "This is Base class show()" << endl;
+    void show() {
+        cout << "This is Parent class" << endl;
     }
-
-    virtual ~Base() {}
 };
 
-class Derived : public Base {
+// Child Class
+class Child : public Parent {
 public:
-    void show() override {
-        cout << "This is Derived class show()" << endl;
+    void show() {
+        cout << "This is Child class" << endl;
     }
 };
 
 int main() {
-    Base* b;
-    Derived d;
-    b = &d;
 
-    b->show();  // Calls Derived's show()
+    Child obj;
+
+    obj.show();
+
     return 0;
 }
