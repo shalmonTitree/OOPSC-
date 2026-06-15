@@ -1,36 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Animal {
+// Base Class
+class A {
 public:
-    void eat() {
-        cout << "Eating..." << endl;
+    void showA() {
+        cout << "Class A" << endl;
     }
 };
 
-class Dog : public Animal {
+// Derived Class B
+class B : public A {
 public:
-    void bark() {
-        cout << "Dog barking" << endl;
+    void showB() {
+        cout << "Class B" << endl;
     }
 };
 
-class Cat : public Animal {
+// Derived Class C
+class C : public A {
 public:
-    void meow() {
-        cout << "Cat meowing" << endl;
+    void showC() {
+        cout << "Class C" << endl;
     }
 };
 
 int main() {
-    Dog d;
-    Cat c;
 
-    d.eat();
-    d.bark();
+    B obj1;
+    obj1.showA();
+    obj1.showB();
 
-    c.eat();
-    c.meow();
+    C obj2;
+    obj2.showA();
+    obj2.showC();
 
     return 0;
 }
