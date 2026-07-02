@@ -1,27 +1,23 @@
 #include <iostream>
 using namespace std;
 
-// Parent Class
-class Parent {
+class Animal {
 public:
-    void show() {
-        cout << "This is Parent class" << endl;
+    virtual void sound() {
+        cout << "Animal sound" << endl;
     }
 };
 
-// Child Class
-class Child : public Parent {
+class Dog : public Animal {
 public:
-    void show() {
-        cout << "This is Child class" << endl;
+    void sound() override {
+        cout << "Dog barks" << endl;
     }
 };
 
 int main() {
-
-    Child obj;
-
-    obj.show();
+    Animal* a = new Dog();
+    a->sound();
 
     return 0;
 }
