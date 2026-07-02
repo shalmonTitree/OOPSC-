@@ -1,24 +1,21 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Box {
+class Demo {
 private:
-    int width;
+    int x = 10;
 
 public:
-    Box(int w) : width(w) {}
-
-    // Friend function declaration
-    friend void printWidth(Box b);
+    friend void display(Demo);
 };
 
-// Friend function definition
-void printWidth(Box b) {
-    cout << "Width: " << b.width << endl;
+void display(Demo d) {
+    cout << "Value of x: " << d.x << endl;
 }
 
 int main() {
-    Box b(10);
-    printWidth(b);
+    Demo d;
+    display(d);
+
     return 0;
 }
