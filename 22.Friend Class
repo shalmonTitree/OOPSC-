@@ -1,28 +1,24 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Engine;   // forward declaration
-
-class Car {
+class A {
 private:
-    int speed;
+    int x = 100;
 
-public:
-    Car(int s) : speed(s) {}
-
-    friend class Engine;  // Engine is friend
+    friend class B;
 };
 
-class Engine {
+class B {
 public:
-    void showSpeed(Car c) {
-        cout << "Car speed: " << c.speed << endl;
+    void display(A a) {
+        cout << "Value of x: " << a.x << endl;
     }
 };
 
 int main() {
-    Car c(120);
-    Engine e;
-    e.showSpeed(c);
+    A a;
+    B b;
+    b.display(a);
+
     return 0;
 }
